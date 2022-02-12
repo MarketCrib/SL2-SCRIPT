@@ -1,0 +1,252 @@
+
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local KickAll = Instance.new("TextButton")
+local NoClip = Instance.new("TextButton")
+local TPTOOL = Instance.new("TextButton")
+local ControlPlayers = Instance.new("TextButton")
+local AimBotESP = Instance.new("TextButton")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Frame_2 = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local FlyE = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Workspace
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+Main.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Main.BorderSizePixel = 2
+Main.Position = UDim2.new(0.0565348417, 0, 0.242544726, 0)
+Main.Size = UDim2.new(0, 614, 0, 276)
+Main.Active = true
+Main.Draggable = true
+
+KickAll.Name = "Kick All"
+KickAll.Parent = Main
+KickAll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KickAll.BackgroundTransparency = 0.800
+KickAll.Position = UDim2.new(0.555802107, 0, 0.688405812, 0)
+KickAll.Size = UDim2.new(0, 200, 0, 50)
+KickAll.Font = Enum.Font.SourceSans
+KickAll.Text = "Kick All"
+KickAll.TextColor3 = Color3.fromRGB(0, 0, 0)
+KickAll.TextSize = 14.000
+KickAll.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("loadstring(game:HttpGet('https://raw.githubusercontent.com/tututu1mn13/FNTK/main/sl2dscript.lua'))()"))();
+end)
+
+NoClip.Name = "No-Clip"
+NoClip.Parent = Main
+NoClip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NoClip.BackgroundTransparency = 0.800
+NoClip.Position = UDim2.new(0.554880023, 0, 0.409420252, 0)
+NoClip.Size = UDim2.new(0, 200, 0, 50)
+NoClip.Font = Enum.Font.SourceSans
+NoClip.Text = "No-Clip"
+NoClip.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoClip.TextSize = 14.000
+
+TPTOOL.Name = "TP TOOL"
+TPTOOL.Parent = Main
+TPTOOL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TPTOOL.BackgroundTransparency = 0.800
+TPTOOL.Position = UDim2.new(0.0738092363, 0, 0.688405812, 0)
+TPTOOL.Size = UDim2.new(0, 200, 0, 50)
+TPTOOL.Font = Enum.Font.SourceSans
+TPTOOL.Text = "TP TOOL"
+TPTOOL.TextColor3 = Color3.fromRGB(0, 0, 0)
+TPTOOL.TextSize = 14.000
+
+ControlPlayers.Name = "Control Players"
+ControlPlayers.Parent = Main
+ControlPlayers.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ControlPlayers.BackgroundTransparency = 0.800
+ControlPlayers.Position = UDim2.new(0.55641675, 0, 0.159420297, 0)
+ControlPlayers.Size = UDim2.new(0, 200, 0, 50)
+ControlPlayers.Font = Enum.Font.SourceSans
+ControlPlayers.Text = "Control Players"
+ControlPlayers.TextColor3 = Color3.fromRGB(0, 0, 0)
+ControlPlayers.TextSize = 14.000
+ControlPlayers.MouseButton1Down:connect(function()
+
+	-- Objects
+	plr = game.Players.LocalPlayer
+	ControlGui = Instance.new("ScreenGui")
+	Frame = Instance.new("Frame")
+	TextButton = Instance.new("TextButton")
+	TextBox = Instance.new("TextBox")
+
+	-- Properties
+
+	ControlGui.Name = "ControlGui"
+	ControlGui.Parent = plr.PlayerGui
+
+	Frame.Parent = ControlGui
+	Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+	Frame.Position = UDim2.new(0, 300, 0, 200)
+	Frame.Size = UDim2.new(0, 300, 0, 150)
+	Frame.Active = true
+	Frame.Draggable = true
+
+	TextButton.Parent = Frame
+	TextButton.BackgroundColor3 = Color3.new(1, 1, 1)
+	TextButton.Position = UDim2.new(0, 50, 0, 90)
+	TextButton.Size = UDim2.new(0, 200, 0, 50)
+	TextButton.Font = Enum.Font.SourceSans
+	TextButton.FontSize = Enum.FontSize.Size32
+	TextButton.Text = "Control"
+	TextButton.TextSize = 30
+	TextButton.MouseButton1Down:connect(function()
+		if TextButton.Text == "Control" then
+			TextButton.Text = "UnControl"   
+			workspace[TextBox.Text].Humanoid.PlatformStand = true
+			W1 = Instance.new("Weld",workspace)
+			W1.Name = "Weld1"
+			W1.Part0 = plr.Character.Torso
+			W1.Part1 = workspace[TextBox.Text].Torso
+			W2 = Instance.new("Weld",workspace)
+			W2.Name = "Weld2"
+			W2.Part0 = plr.Character.Head
+			W2.Part1 = workspace[TextBox.Text].Head
+			W3 = Instance.new("Weld",workspace)
+			W3.Name = "Weld3"
+			W3.Part0 = plr.Character.HumanoidRootPart
+			W3.Part1 = workspace[TextBox.Text].HumanoidRootPart
+			W4 = Instance.new("Weld",workspace)
+			W4.Name = "Weld4"
+			W4.Part0 = plr.Character["Left Arm"]
+			W4.Part1 = workspace[TextBox.Text]["Left Arm"]
+			W5 = Instance.new("Weld",workspace)
+			W5.Name = "Weld5"
+			W5.Part0 = plr.Character["Left Leg"]
+			W5.Part1 = workspace[TextBox.Text]["Left Leg"]
+			W6 = Instance.new("Weld",workspace)
+			W6.Name = "Weld6"
+			W6.Part0 = plr.Character["Right Arm"]
+			W6.Part1 = workspace[TextBox.Text]["Right Arm"]
+			W7 = Instance.new("Weld",workspace)
+			W7.Name = "Weld7"
+			W7.Part0 = plr.Character["Right Leg"]
+			W7.Part1 = workspace[TextBox.Text]["Right Leg"]
+			for i,v in pairs(plr.Character:GetChildren()) do
+				if v.ClassName == "Part" then
+					v.Transparency = 1
+				end
+				plr.Character.HumanoidRootPart.Transparency = 1
+				if v.ClassName == "Accessory" then
+					v.Handle.Transparency = 1
+				end
+				plr.Character.Humanoid.NameOcclusion = "NoOcclusion"
+			end
+		elseif TextButton.Text == "UnControl" then
+			TextButton.Text = "Control"
+			workspace[TextBox.Text].Humanoid.PlatformStand = false
+			workspace.Weld1:Remove()
+			workspace.Weld2:Remove()
+			workspace.Weld3:Remove()
+			workspace.Weld4:Remove()
+			workspace.Weld5:Remove()
+			workspace.Weld6:Remove()
+			workspace.Weld7:Remove()
+			for i,v in pairs(plr.Character:GetChildren()) do
+				if v.ClassName == "Part" then
+					v.Transparency = 0
+				end
+				plr.Character.HumanoidRootPart.Transparency = 1
+				if v.ClassName == "Accessory" then
+					v.Handle.Transparency = 0
+				end
+				plr.Character.Humanoid.NameOcclusion = "OccludeAll"
+			end
+		end
+	end)
+
+	TextBox.Parent = Frame
+	TextBox.BackgroundColor3 = Color3.new(1, 1, 1)
+	TextBox.Position = UDim2.new(0, 50, 0, 20)
+	TextBox.Size = UDim2.new(0, 200, 0, 30)
+	TextBox.Font = Enum.Font.SourceSans
+	TextBox.FontSize = Enum.FontSize.Size28
+	TextBox.Text = "Name"
+	TextBox.TextSize = 25
+
+end)
+
+AimBotESP.Name = "AimBot/ESP"
+AimBotESP.Parent = Main
+AimBotESP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AimBotESP.BackgroundTransparency = 0.800
+AimBotESP.Position = UDim2.new(0.073289901, 0, 0.159420297, 0)
+AimBotESP.Size = UDim2.new(0, 200, 0, 50)
+AimBotESP.Font = Enum.Font.SourceSans
+AimBotESP.Text = "AimBot/ESP"
+AimBotESP.TextColor3 = Color3.fromRGB(0, 0, 0)
+AimBotESP.TextSize = 14.000
+AimBotESP.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+end)
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, 0.112318844, 0)
+Frame.Size = UDim2.new(0, 614, 0, 2)
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.644951165, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 217, 0, 31)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "By : MarketCrib Vlone#9221"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 20.000
+
+Frame_2.Parent = Main
+Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0.490228027, 0, 0.119565219, 0)
+Frame_2.Size = UDim2.new(0, 6, 0, 243)
+
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.0309446249, 0, 0, 0)
+TextLabel_2.Size = UDim2.new(0, 217, 0, 31)
+TextLabel_2.Font = Enum.Font.SourceSansBold
+TextLabel_2.Text = "https://discord.gg/Wp8jp9B5KZ"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextSize = 20.000
+
+TextLabel_3.Parent = Main
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0.384364814, 0, 0, 0)
+TextLabel_3.Size = UDim2.new(0, 138, 0, 31)
+TextLabel_3.Font = Enum.Font.SourceSansBold
+TextLabel_3.Text = "SL2 SHITTER"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextSize = 20.000
+
+FlyE.Name = "Fly [E]"
+FlyE.Parent = Main
+FlyE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FlyE.BackgroundTransparency = 0.800
+FlyE.Position = UDim2.new(0.073289901, 0, 0.409420282, 0)
+FlyE.Size = UDim2.new(0, 200, 0, 50)
+FlyE.Font = Enum.Font.SourceSans
+FlyE.Text = "Fly [E]"
+FlyE.TextColor3 = Color3.fromRGB(0, 0, 0)
+FlyE.TextSize = 14.000
+FlyE.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/KazeOnTop/RiceFeFly/main/Wind"))()
+end)
